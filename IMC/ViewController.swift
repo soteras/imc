@@ -24,7 +24,7 @@ class ViewController: UIViewController {
     }
 
     @IBAction func calculate(_ sender: Any) {
-        if let weight = Double(tfWeight.text!), let height = Double(tfHeight.text!) {
+        if let weight = Double(tfWeight.text!.replacingOccurrences(of: ",", with: ".")), let height = Double(tfHeight.text!) {
             imc = weight / pow(height, 2)
             showResults()
         }
